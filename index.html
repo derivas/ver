@@ -1,0 +1,963 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en-US">
+<head>
+  <meta name="generator" content="HTML Tidy for Windows (vers 22 March 2008), see www.w3.org">
+  <meta content="text/html; charset=us-ascii" http-equiv="Content-Type">
+
+  <title>Eric's Archived Thoughts: 2013 March</title>
+  <link href="index.css" media="all" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div id="sitemast">
+    <h1><a href="default.html" indepth="true"><span>meyerweb</span>.com</a></h1>
+  </div>
+  <div></div>
+        <div id="search">
+    <h4>Exploration</h4>
+
+    <form action="http://www.google.com/custom" method="get">
+      <input name="sa" type="submit" value="Search"> <input maxlength="255" name="q" size="20" type="text" value=""> <input name="sitesearch" type="hidden" value="meyerweb.com">
+    </form><small><a href="search.html" indepth="true">Powered by Google</a></small>
+  </div>
+
+  <div id="main">
+    <div class="skipper">
+      Skip to: <a href="#navhead">site navigation/presentation</a>
+    </div>
+
+    <div class="skipper">
+      Skip to: <a href="#thoughts">Thoughts From Eric</a>
+    </div>
+
+    <div id="thoughts">
+      <h2 class="pagetitle">Archive: March 2013</h2>
+
+      <div class="entry">
+        <h3><a href="default_001.html" indepth="true" rel="bookmark" title="Permanent Link: No Laughing Matter">No Laughing Matter</a></h3>
+
+        <ul class="meta">
+          <li class="date">Wed 20 Mar 2013</li>
+
+          <li class="time">1111</li>
+
+          <li class="cat"><a href="default_002.html" indepth="true" rel="category tag" title="View all posts in Commentary">Commentary</a></li>
+
+          <li class="cmt"><a href="default_001.html#comments" indepth="true">Two responses</a></li>
+        </ul>
+
+        <div class="text">
+          <p>From the wise and insightful Amber Fisher, who credits <a href="default_003.html" indepth="true">The Rocket Science Group</a>&acirc;&euro;&trade;s <a href="default_004.html" indepth=
+          "true">Voice and Tone</a> as an inspiration:</p>
+
+          <blockquote>
+            <p>One of the things I teach tech writers: it&acirc;&euro;&trade;s okay to have fun with your audience most of the time. But never joke with frustrated people. If
+            you&acirc;&euro;&trade;re delivering bad news, an alert, or helping a new user troubleshoot a problem, be straightforward and transparent.</p>
+          </blockquote>
+
+          <p>As I&acirc;&euro;&trade;m sure Amber would be the first to say, said rule is not just for tech writers.&nbsp; In any online interaction, synchronous or asynchronous, with someone you
+          don&acirc;&euro;&trade;t know really, <em>really</em> well, that rule applies.&nbsp; <strong>Always.</strong>&nbsp; And the defense &acirc;&euro;&oelig;Hey, man, where&acirc;&euro;&trade;s
+          your sense of humor?&acirc;&euro; is usually the reddest of flags that you have already screwed this up, and should consider apologizing.</p>
+
+          <p>(I&acirc;&euro;&trade;m especially looking at you, Twitterers.)</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <h3><a href="default_005.html" indepth="true" rel="bookmark" title="Permanent Link: Unsupportable Promises">Unsupportable Promises</a></h3>
+
+        <ul class="meta">
+          <li class="date">Tue 19 Mar 2013</li>
+
+          <li class="time">1201</li>
+
+          <li class="cat"><a href="default_006.html" indepth="true" rel="category tag" title="View all posts in CSS">CSS</a><br>
+          <a href="default_007.html" indepth="true" rel="category tag" title="View all posts in Standards">Standards</a></li>
+
+          <li class="cmt"><a href="default_005.html#comments" indepth="true">34 responses</a></li>
+        </ul>
+
+        <div class="text">
+          <p>Over the past year and a half, the CSS Working Group has been working on a <a href="default_008.html" indepth="true">CSS Conditional Rules Module Level 3</a> module.&nbsp; Now,
+          don&acirc;&euro;&trade;t get overexcited: this is not a proposal to add generalized, formal if/then/else or switch statements to CSS&acirc;&euro;&rdquo;though in a very limited way, it does
+          just that.&nbsp; This is the home of the <a href="default_008.html#at-media" indepth="true"><code>@media</code> rule</a>, which lets you create if/then conditions with regard to the media
+          environment.&nbsp; It&acirc;&euro;&trade;s also the home of the <a href="default_008.html#at-supports" indepth="true"><code>@supports</code> rule</a>, which lets
+          you&acirc;&euro;&brvbar;well, that&acirc;&euro;&trade;s actually more complicated than you might think.</p>
+
+          <p>I mean, what do <em>you</em> think <code>@supports</code> means?&nbsp; Take a moment to formulate a one-line definition of your understanding of what it does, before moving on to the
+          rest of this piece.</p>
+
+          <p>If you&acirc;&euro;&trade;ve never heard of it before and wonder how it works, here&acirc;&euro;&trade;s a very basic example:</p>
+          <pre>
+<code>body {background-color: white;}
+@supports (background-color: cornflowerblue) {
+        body {background-color: cornflowerblue;}
+}
+</code>
+</pre>
+
+          <p>The idea is that if the browser supports that property:value combination, then it will apply the rule or rules found inside the curly brackets.&nbsp; In this sense,
+          it&acirc;&euro;&trade;s just like <code>@media</code> rules: if the conditions in the parentheses are deemed to apply, then the rules inside the declaration block are used.&nbsp; The module
+          refers to this ability as &acirc;&euro;&oelig;feature queries&acirc;&euro;.</p>
+
+          <p>There are some logical combination keywords available: <code>and</code>, <code>or</code>, and <code>not</code>.&nbsp; So you can say things like:</p>
+          <pre>
+<code>body {color: #222; background-color: white;}
+@supports ((background-color: cornflowerblue) and (color: rgba(0,0,0,0.5))) {
+        body {background-color: cornflowerblue; color: rgba(0,0,0,0.5);}
+}
+</code>
+</pre>
+
+          <p>Okay, but what does that actually mean?&nbsp; Here&acirc;&euro;&trade;s what the specification says:</p>
+
+          <blockquote>
+            <p>A CSS processor is considered to <em><strong>support</strong></em> a declaration (consisting of a property and value) if it accepts that declaration (rather than discarding it as a
+            parse error). If a processor does not implement, with a usable level of support, the value given, then it <strong>must not</strong> accept the declaration or claim support for it.</p>
+          </blockquote>
+
+          <p>So in that first sentence, what we&acirc;&euro;&trade;re told is that &acirc;&euro;&oelig;support&acirc;&euro; means &acirc;&euro;&oelig;accepts [a] declaration&acirc;&euro; and
+          doesn&acirc;&euro;&trade;t drop it on the floor as something it doesn&acirc;&euro;&trade;t recognize.&nbsp; In other words, if a browser parses a property:value pair, then that qualifies as
+          &acirc;&euro;&oelig;support&acirc;&euro; for said pair.&nbsp; Note that this sentence says <em>nothing</em> about what happens after parsing.&nbsp; According to this, a browser could have a
+          completely botched, partial, and generally unusable implementation of the property:value pair, but the act of recognizing means that there&acirc;&euro;&trade;s
+          &acirc;&euro;&oelig;support&acirc;&euro;.</p>
+
+          <p>But wait!&nbsp; That second sentence adds an additional constraint, after a fashion: there must be &acirc;&euro;&oelig;a usable level of support&acirc;&euro;, the lack of which means
+          that a browser &acirc;&euro;&oelig;<strong>must not</strong>&acirc;&euro;&brvbar;claim support&acirc;&euro;.&nbsp; So not only must a browser parse a property:value pair, but support it to
+          &acirc;&euro;&oelig;a usable level&acirc;&euro;.</p>
+
+          <p>But what constitutes a &acirc;&euro;&oelig;usable level&acirc;&euro;?&nbsp; According to everyone who&acirc;&euro;&trade;s told me that I was wrong about vendor prefixes, any browser
+          implementation of a feature should be complete and error-free.&nbsp; Is that what&acirc;&euro;&trade;s required to be regarded as a usable level?&nbsp; How about if the implementation has
+          one known bug?&nbsp; Three?&nbsp; Ten?&nbsp; Can any of them be severe bugs?&nbsp; What about merely serious bugs?&nbsp; What if two browsers claim usable support, and yet are not
+          interoperable?</p>
+
+          <p>So.&nbsp; How does the definition of <code>@supports</code> match the one-line definition I asked you to formulate, back at the beginning?&nbsp; Are they exactly the same, or is there a
+          difference?</p>
+
+          <p>I suspect that most people, especially those coming across <code>@supports</code> for the first time, will assume that the word means that a browser has complete, error-free
+          support.&nbsp; That&acirc;&euro;&trade;s the implicit promise.&nbsp; Very few people think of &acirc;&euro;&oelig;supports&acirc;&euro;&nbsp;as a synonym for
+          &acirc;&euro;&oelig;recognizes&acirc;&euro; (let alone &acirc;&euro;&oelig;parses&acirc;&euro;).&nbsp; There&acirc;&euro;&trade;s a difference, sometimes a very large one, between
+          recognizing a thing and supporting it.&nbsp; I&acirc;&euro;&trade;m sure that browser teams will do their best to avoid situations where a property:value pair is parsed but not well
+          supported, but it&acirc;&euro;&trade;s only a matter of time before a &acirc;&euro;&oelig;supported&acirc;&euro; pair proves to be badly flawed, or retroactively made wrong by specification
+          changes.&nbsp; Assuming that such things will be allowed, in an environment where <code>@supports</code> exists.</p>
+
+          <p>If feature queries were set with <code>@feature</code>, as media queries are set using <code>@media</code>, or even if the name were something along the lines of <code>@parses</code> or
+          <code>@recognizes</code>, I&acirc;&euro;&trade;d be a lot less bothered.&nbsp; The implicit promise would be quite a bit different.&nbsp; What I feel like we face here is the exact
+          inversion of vendor prefixes: instead of a marker for possible instability and a warning that preserves the possibility of changing the specification when needed, this pretends to promise
+          stability and safety while restricting the WG&acirc;&euro;&trade;s ability to make changes, however necessary.&nbsp; My instinct is that <code>@supports</code> will end up in the same
+          place: abused, broken, and eventually reviled&acirc;&euro;&rdquo;except this time, there will be the extra bitterness of authors feeling that they were betrayed.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <h3><a href="default_009.html" indepth="true" rel="bookmark" title="Permanent Link: How Twitter Got Its Line Breaks">How Twitter Got Its Line Breaks</a></h3>
+
+        <ul class="meta">
+          <li class="date">Thu 14 Mar 2013</li>
+
+          <li class="time">1722</li>
+
+          <li class="cat"><a href="default_006.html" indepth="true" rel="category tag" title="View all posts in CSS">CSS</a></li>
+
+          <li class="cmt"><a href="default_009.html#comments" indepth="true">Five responses</a></li>
+        </ul>
+
+        <div class="text">
+          <p>In the past day or so, Twitter started &acirc;&euro;&oelig;supporting line breaks&acirc;&euro;.&nbsp; This is something lots of third-party clients had been doing for a while, and heck,
+          even Facebook does it.&nbsp; In fact, if you had a tweet with linebreaks get auto-posted to Facebook by the Twitter-to-Facebook tool that Twitter provides, the linebreaks would show up
+          there even though they didn&acirc;&euro;&trade;t on Twitter itself.&nbsp; Until recently.</p>
+
+          <p>So how did they do it?&nbsp; With CSS.&nbsp; Here it is:</p>
+          <pre>
+<code>.tweet-display-linebreaks .tweet .js-tweet-text{
+        white-space:pre-wrap
+}
+</code>
+</pre>
+
+          <p>That&acirc;&euro;&trade;s it.&nbsp; I&acirc;&euro;&trade;m not going to comment on their selector construction, except in the meta sense that I <em>just did</em>, but that single rule is
+          all it took.</p>
+
+          <p>Well, not <em>quite</em> all.&nbsp; The other thing they&acirc;&euro;&trade;ve done is to trim off any leading or trailing whitespace, and make sure the tweet&acirc;&euro;&trade;s
+          content is right up against the opening and closing tags of the element.&nbsp; It looks like so:</p>
+          <pre>
+<code>&lt;p class="js-tweet-text"&gt;Y&acirc;&euro;&trade;all ready for this?&lt;/p&gt;</code>
+</pre>
+
+          <p>When I input that tweet, it was like this, extra linefeeds and all:</p>
+          <pre>
+<code>
+
+
+Y&acirc;&euro;&trade;all ready for this?
+
+
+
+</code>
+</pre>
+
+          <p>So why do they trim off the edges?&nbsp; Because if they left any whitespace between the tags and the content, <code>pre-wrap</code> would honor it.&nbsp; This would happen even if
+          Twitter, and not the author, was the source of the linefeeds between tags and content.&nbsp; So rather than just ensure the content was placed normally, without any extra space, they went
+          the <code>trim($tweet)</code> route.&nbsp; I&acirc;&euro;&trade;m sure there are ways to beat the trimming; I haven&acirc;&euro;&trade;t tried to find them.&nbsp; And there may be perfectly
+          good reasons why they went the <code>trim()</code> route.&nbsp; Maybe someone from Twitter will drop by to fill us in.</p>
+
+          <p>I will also note that <code>white-space: pre-wrap</code> preserves spaces between characters, just like <code>pre</code> elements do.&nbsp; That means that anyone who double-spaces after
+          sentences will have that space show up in their tweets, for everyone else to see.&nbsp; Just like with the line breaks, author intent is thus preserved.&nbsp; <a href="they-deal.gif">Deal
+          with it.</a></p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <h3><a href="default_010.html" indepth="true" rel="bookmark" title="Permanent Link: Helvetial">Helvetial</a></h3>
+
+        <ul class="meta">
+          <li class="date">Tue 12 Mar 2013</li>
+
+          <li class="time">1646</li>
+
+          <li class="cat"><a href="default_011.html" indepth="true" rel="category tag" title="View all posts in Browsers">Browsers</a><br>
+          <a href="default_006.html" indepth="true" rel="category tag" title="View all posts in CSS">CSS</a></li>
+
+          <li class="cmt"><a href="default_010.html#comments" indepth="true">14 responses</a></li>
+        </ul>
+
+        <div class="text">
+          <p>Maybe all the cool kids already know this, but I didn&acirc;&euro;&trade;t, so I&acirc;&euro;&trade;ll document it for the rest of us:&nbsp; in Windows, Helvetica is not Helvetica:
+          it&acirc;&euro;&trade;s Arial.&nbsp; It&acirc;&euro;&trade;s Arial even if you explicitly ask for Helvetica <em>and</em> fall back to a non-sans-serif font family <em>and</em> allow for no
+          other choices&acirc;&euro;&rdquo;but it&acirc;&euro;&trade;s <em>not</em> Helvetica if you try to get to it indirectly.</p>
+
+          <p>To see what I mean, you can load up <a href="helvetial.html" indepth="true">my testcase</a> in any Windows browser&acirc;&euro;&rdquo;IE, Firefox, Chrome,
+          whatever&acirc;&euro;&rdquo;assuming that you haven&acirc;&euro;&trade;t installed Helvetica on your Windows machine.&nbsp; (If you have, then I&acirc;&euro;&trade;d love to know what
+          results you get.)&nbsp; Given that you haven&acirc;&euro;&trade;t installed Helvetica, you should see that three of the four bottom-bordered <code>span</code>s are using Arial.&nbsp; This
+          can be determined due to the shapes of the &acirc;&euro;&oelig;GR&acirc;&euro; characters&acirc;&euro;&rdquo;<a href="default_013.html" indepth="true">they are notably different between
+          Helvetica and Arial</a>.&nbsp; Here&acirc;&euro;&trade;s what I apply to the first test list item:</p>
+          <pre>
+<code>#l01 .s01 {font-family: Helvetica, monospace;}
+#l01 .s02 {font-family: Arial, monospace;}
+</code>
+</pre>
+
+          <p>My result is that they use exactly the same face, and that face is Arial, which should not have happened.&nbsp; If Helvetica is not present, the first <code>span</code> should be
+          rendered using a monospace font face.&nbsp; If it <em>is</em> present, then the first <code>span</code> should have different letterforms than the second.</p>
+
+          <p>But it&acirc;&euro;&trade;s the second line where things get really interesting.&nbsp; There, I assigned local copies of Helvetica and Arial (if they exist) to the invented family names
+          &acirc;&euro;&oelig;H&acirc;&euro; and &acirc;&euro;&oelig;A&acirc;&euro;.&nbsp; Then I apply this to the second test list item:</p>
+          <pre>
+<code>#l02 .s01 {font-family: H, monospace;}
+#l02 .s02 {font-family: A, monospace;}
+</code>
+</pre>
+
+          <p>The result should be the same as the first line, but it isn&acirc;&euro;&trade;t: the first <code>span</code> gets a fallback font face, and the second <code>span</code> gets
+          Arial.&nbsp; So while the system redirects requests for Helvetica to Arial, it doesn&acirc;&euro;&trade;t do so in such a way that the invented family name
+          &acirc;&euro;&oelig;H&acirc;&euro; resolves to Arial, even though it was assigned Helvetica (or perhaps I should say &acirc;&euro;&oelig;Helvetica&acirc;&euro;) as its source.</p>
+
+          <p>I&acirc;&euro;&trade;d be interested to know if there&acirc;&euro;&trade;s something I&acirc;&euro;&trade;ve overlooked or misunderstood here, because these waters are deep and I suspect
+          my understanding of them is somewhat shallow.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <h3><a href="default_014.html" indepth="true" rel="bookmark" title="Permanent Link: Glasshouse">Glasshouse</a></h3>
+
+        <ul class="meta">
+          <li class="date">Thu 7 Mar 2013</li>
+
+          <li class="time">1208</li>
+
+          <li class="cat"><a href="default_015.html" indepth="true" rel="category tag" title="View all posts in Culture">Culture</a><br>
+          <a href="default_016.html" indepth="true" rel="category tag" title="View all posts in Observations">Observations</a><br>
+          <a href="default_017.html" indepth="true" rel="category tag" title="View all posts in Parenting">Parenting</a><br>
+          <a href="default_018.html" indepth="true" rel="category tag" title="View all posts in Tech">Tech</a><br>
+          <a href="default_019.html" indepth="true" rel="category tag" title="View all posts in Technovertigo">Technovertigo</a></li>
+
+          <li class="cmt"><a href="default_014.html#comments" indepth="true">Seven responses</a></li>
+        </ul>
+
+        <div class="text">
+          <p>Our youngest tends to wake up fairly early in the morning, at least as compared to his sisters, and since I need less sleep than Kat I&acirc;&euro;&trade;m usually the one who gets up
+          with him.&nbsp; This morning, he put away a box he&acirc;&euro;&trade;d just emptied of toys and I told him, &acirc;&euro;&oelig;Well done!&acirc;&euro;&nbsp; He turned to me, stuck his
+          hand up in the air, and said with glee, &acirc;&euro;&oelig;Hive!&acirc;&euro;</p>
+
+          <p>I gave him the requested high-five, of course, and then another for being proactive.&nbsp; It was the first time he&acirc;&euro;&trade;d ever asked for one.&nbsp; He could not have
+          looked more pleased with himself.</p>
+
+          <p>And I suddenly realized that I wanted to be able to say to my glasses, &acirc;&euro;&oelig;Okay, dump the last 30 seconds of livestream to permanent storage.&acirc;&euro;</p>
+
+          <p>There have been <a href="http://creativegood.com/blog/the-google-glass-feature-no-one-is-talking-about/">concerns raised</a> about the impending crowdsourced panopticon that Google Glass
+          represents.&nbsp; I share those concerns, though I also wonder if the pairing of constant individual surveillance with cloud-based storage mediated through wearable CPUs will prove out an
+          old if slightly recapitalized adage: that an <a href="http://en.wikipedia.org/wiki/ARM_architecture">ARM</a>ed society is a polite society.&nbsp; Will it?&nbsp; We&acirc;&euro;&trade;ll
+          see&acirc;&euro;&rdquo;pun unintentional but unavoidable, very much like the future itself.</p>
+
+          <p>And yet.&nbsp; You think that you&acirc;&euro;&trade;ll remember all those precious milestones, that there is <em>no way on Earth</em> you could ever forget your
+          child&acirc;&euro;&trade;s first word, or the first time they took their first steps, or the time they suddenly put on an impromptu comedy show that had you on the floor laughing.&nbsp; But
+          you do forget.&nbsp; Time piles up and you forget most of everything that ever happened to you.&nbsp; A few shining moments stay preserved, and the rest fade into the indistinct fog of your
+          former existence.</p>
+
+          <p>I&acirc;&euro;&trade;m not going to hold up my iPhone or Android or any other piece of hardware all the time, hoping that I&acirc;&euro;&trade;ll manage to catch a few moments to
+          save.&nbsp; That solution doesn&acirc;&euro;&trade;t scale at all, but I still want to save those moments.&nbsp; If my glasses (or some other device) were always capturing a video buffer
+          that could be dumped to permanent storage at any time, I could capture all of those truly important things.&nbsp; I could go back and see that word, that step, that comedy show.&nbsp; I
+          would do that.&nbsp; I wanted to do it, sitting on the floor of my child&acirc;&euro;&trade;s room this morning.</p>
+
+          <p>That was when I realized that Glass is inevitable.&nbsp; We&acirc;&euro;&trade;re going to observe each other because we want to preserve our own lives&acirc;&euro;&rdquo;not every last
+          second, but the parts that really matter to us.&nbsp; There will be a whole host of side effects, some of which we can predict but most of which will surprise us.&nbsp; I just
+          don&acirc;&euro;&trade;t believe that we can avoid it.&nbsp; Even if Google fails with Glass, someone else will succeed with a very similar project, and sooner than we expect.&nbsp;
+          I&acirc;&euro;&trade;ve started thinking about how to cope with that outcome.&nbsp; Have you?</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <h3><a href="http://meyerweb.com/eric/thoughts/2013/03/04/the-stinger/" rel="bookmark" title="Permanent Link: The Stinger">The Stinger</a></h3>
+
+        <ul class="meta">
+          <li class="date">Mon 4 Mar 2013</li>
+
+          <li class="time">1244</li>
+
+          <li class="cat"><a href="default_002.html" indepth="true" rel="category tag" title="View all posts in Commentary">Commentary</a><br>
+          <a href="http://meyerweb.com/eric/thoughts/category/personal/history/" rel="category tag" title="View all posts in History">History</a><br>
+          <a href="default_007.html" indepth="true" rel="category tag" title="View all posts in Standards">Standards</a><br>
+          <a href="http://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag" title="View all posts in Web">Web</a></li>
+
+          <li class="cmt"><a href="http://meyerweb.com/eric/thoughts/2013/03/04/the-stinger/#comments">Two responses</a></li>
+        </ul>
+
+        <div class="text">
+          <p>(In television, the &acirc;&euro;&oelig;stinger&acirc;&euro; is the clip that plays during or just after the closing credits of a show.)</p>
+
+          <p>On Friday, the Web Standards Project <a href="http://www.webstandards.org/2013/03/01/our-work-here-is-done/">announced its own dissolution</a>.&nbsp; I felt a lot of things upon reading
+          the announcement, once I got over my initial surprise: nostalgia, wistfulness, closure.&nbsp; And over it all, a deep sense of respect for the Project as a whole, from its inception to its
+          peak to its final act.</p>
+
+          <p>In some ways, the announcement was a simple formalization of a longstanding state of affairs, as the Project has gradually grown quieter and quieter over the years, and its initiatives
+          had been passed on to other, more active homes.&nbsp; It was still impressive to see the group explicitly shut down.&nbsp; I can&acirc;&euro;&trade;t think of the last time I saw a group
+          that had been so influential and effective recognize that it was time to turn off the lights, and exit with dignity.&nbsp; As they wrote:</p>
+
+          <blockquote cite="http://www.webstandards.org/2013/03/01/our-work-here-is-done">
+            <p>Thanks to the hard work of countless WaSP members and supporters (like you), Tim Berners-Lee&acirc;&euro;&trade;s vision of the web as an open, accessible, and universal community is
+            largely the reality. While there is still work to be done, the sting of the WaSP is no longer necessary. And so it is time for us to close down The Web Standards Project.</p>
+          </blockquote>
+
+          <p>I have a long history with the WaSP.&nbsp; Way, way back, deep in the thick of the browser wars, I was invited to be a member of the CSS Action Committee, better known as the CSS
+          Samurai.&nbsp; We spent the next couple of years documenting how things worked (or, more often, didn&acirc;&euro;&trade;t) in CSS implementations, and&acirc;&euro;&rdquo;and this was the
+          clever bit, if you ask me&acirc;&euro;&rdquo;writing up specific plans of action for browsers.&nbsp; The <a href="http://archive.webstandards.org/css/#The_Top_10_Lists">standards compliance
+          reviews</a> we published told browsers what they needed to fix first, not just what they were getting wrong.&nbsp; I can&acirc;&euro;&trade;t claim that our every word was agreed with, let
+          alone acted upon, but I&acirc;&euro;&trade;m pretty confident those reviews helped push browser teams in the right direction.&nbsp; Or, more likely, helped browser teams push their bosses
+          in the direction the teams already wanted to go.</p>
+
+          <p>Succumbing to a wave of nostalgia, I spent a few minutes trawling my archives.&nbsp; I still have what I think is all the mail from the Samurai&acirc;&euro;&trade;s mailing list, run
+          through Project Cool&acirc;&euro;&trade;s servers, from when it was set up in August 1998 up through June of 2000.&nbsp; My archive totals 1,716 messages from the group, as well as some of
+          the Steering Committee members (mostly Glenn Davis, though George Olsen was our primary contact during the Microsoft style sheets patent brouhaha of February 1999).&nbsp; If
+          I&acirc;&euro;&trade;m not reading too much into plain text messages over a decade old, we had a pretty great time.&nbsp; And then, after a while, we were done.&nbsp; Unlike the WaSP
+          itself, we never really declared an end.&nbsp; We didn&acirc;&euro;&trade;t even march off into the sunset having declared that the farmers always win.&nbsp; We just faded away.</p>
+
+          <p>Not that that&acirc;&euro;&trade;s entirely a bad thing.&nbsp; At a certain point, our work was done, and we moved on.&nbsp; Still, I look back now and wish we&acirc;&euro;&trade;d made
+          it a little more formal.&nbsp; Had we done so, we might have said something like the WaSP did:</p>
+
+          <blockquote cite="http://www.webstandards.org/2013/03/01/our-work-here-is-done">
+            <p>The job&acirc;&euro;&trade;s not over, but instead of being the work of a small activist group, it&acirc;&euro;&trade;s a job for tens of thousands of developers who care about
+            ensuring that the web remains a free, open, interoperable, and accessible competitor to native apps and closed eco-systems. It&acirc;&euro;&trade;s <em>your</em> job
+            now&acirc;&euro;&brvbar;</p>
+          </blockquote>
+
+          <p>And so it is.&nbsp; These last years have shown that the job is in very good hands.</p>
+
+          <p>&acirc;&euro;&oelig;Never doubt that a small group of thoughtful, committed citizens can change the world. Indeed, it is the only thing that ever has.&acirc;&euro; said Margaret
+          Mead.&nbsp; I see now that the way those small groups truly change the world is by convincing the rest of the world that they are right, thus co-opting the world to their cause.&nbsp; Done
+          properly, the change makes the group obsolete.&nbsp; It&acirc;&euro;&trade;s a lesson worth remembering, as we look at the world today.</p>
+
+          <p>I&acirc;&euro;&trade;m honored to have been a part of the WaSP, and I offer my deepest samurai bow of respect to its founders, its members, and its leaders.&nbsp; Thank you all for
+          making the web today what it is.</p>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <div class="prev"></div>
+
+        <div class="next"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="extra">
+    <div class="panel" id="calendar">
+      <table cellspacing="0" id="wp-calendar">
+        <caption>
+          <a href="index.html" indepth="true" title="View all posts for this month">March 2013</a>
+        </caption>
+
+        <thead>
+          <tr>
+            <th abbr="$wd" class="first" scope="col" title="$wd">S</th>
+
+            <th abbr="$wd" scope="col" title="$wd">M</th>
+
+            <th abbr="$wd" scope="col" title="$wd">T</th>
+
+            <th abbr="$wd" scope="col" title="$wd">W</th>
+
+            <th abbr="$wd" scope="col" title="$wd">T</th>
+
+            <th abbr="$wd" scope="col" title="$wd">F</th>
+
+            <th abbr="$wd" class="last" scope="col" title="$wd">S</th>
+          </tr>
+        </thead>
+
+        <tfoot>
+          <tr>
+            <td abbr="February" class="first" colspan="3" id="prevMonth"><a href="http://meyerweb.com/eric/thoughts/2013/02/" title="View posts for February 2013">February</a></td>
+
+            <td class="pad" id="thisMonth"><a href="index.html" indepth="true" title="Jump to latest posts"></a></td>
+
+            <td abbr="April" class="last" colspan="3" id="nextMonth"><a href="http://meyerweb.com/eric/thoughts/2013/04/" title="View posts for April 2013">April</a></td>
+          </tr>
+        </tfoot>
+
+        <tbody>
+          <tr>
+            <td class="pad" colspan="5">&nbsp;</td>
+
+            <td>1</td>
+
+            <td class="last">2</td>
+          </tr>
+
+          <tr>
+            <td class="first">3</td>
+
+            <td class="posts"><a href="http://meyerweb.com/eric/thoughts/2013/03/04/" title="The Stinger">4</a></td>
+
+            <td>5</td>
+
+            <td>6</td>
+
+            <td class="posts"><a href="http://meyerweb.com/eric/thoughts/2013/03/07/" title="Glasshouse">7</a></td>
+
+            <td>8</td>
+
+            <td class="last">9</td>
+          </tr>
+
+          <tr>
+            <td class="first">10</td>
+
+            <td>11</td>
+
+            <td class="posts"><a href="http://meyerweb.com/eric/thoughts/2013/03/12/" title="Helvetial">12</a></td>
+
+            <td>13</td>
+
+            <td class="posts"><a href="http://meyerweb.com/eric/thoughts/2013/03/14/" title="How Twitter Got Its Line Breaks">14</a></td>
+
+            <td>15</td>
+
+            <td class="last">16</td>
+          </tr>
+
+          <tr>
+            <td class="first">17</td>
+
+            <td>18</td>
+
+            <td class="posts"><a href="http://meyerweb.com/eric/thoughts/2013/03/19/" title="Unsupportable Promises">19</a></td>
+
+            <td class="posts"><a href="http://meyerweb.com/eric/thoughts/2013/03/20/" title="No Laughing Matter">20</a></td>
+
+            <td>21</td>
+
+            <td>22</td>
+
+            <td class="last">23</td>
+          </tr>
+
+          <tr>
+            <td class="first">24</td>
+
+            <td>25</td>
+
+            <td>26</td>
+
+            <td>27</td>
+
+            <td>28</td>
+
+            <td>29</td>
+
+            <td class="last">30</td>
+          </tr>
+
+          <tr>
+            <td class="first">31</td>
+
+            <td class="pad" colspan="6">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel" id="monthly">
+      <h4>Archives</h4>
+
+      <ul>
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2013/">2013</a> <small>(11)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2013/02">February</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2013/03">March</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2013/04">April</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2013/05">May</a> (3)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2012/">2012</a> <small>(51)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/01">January</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/02">February</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/03">March</a> (7)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/04">April</a> (7)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/05">May</a> (7)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/06">June</a> (5)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/09">September</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/10">October</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/11">November</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2012/12">December</a> (5)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2011/">2011</a> <small>(25)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2011/01">January</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2011/02">February</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2011/03">March</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2011/04">April</a> (4)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2011/06">June</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2011/08">August</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2011/09">September</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2011/10">October</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2011/11">November</a> (1)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2010/">2010</a> <small>(25)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2010/01">January</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2010/02">February</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2010/04">April</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2010/05">May</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2010/06">June</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2010/07">July</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2010/10">October</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2010/11">November</a> (4)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2010/12">December</a> (1)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2009/">2009</a> <small>(28)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2009/01">January</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2009/02">February</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2009/03">March</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2009/04">April</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2009/05">May</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2009/07">July</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2009/09">September</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2009/10">October</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2009/11">November</a> (4)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2008/">2008</a> <small>(56)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/01">January</a> (11)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/02">February</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/03">March</a> (7)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/04">April</a> (4)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/05">May</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/06">June</a> (7)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/07">July</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/08">August</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/09">September</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/10">October</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/11">November</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2008/12">December</a> (2)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2007/">2007</a> <small>(86)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/01">January</a> (10)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/02">February</a> (11)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/03">March</a> (9)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/04">April</a> (10)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/05">May</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/06">June</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/07">July</a> (4)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/08">August</a> (7)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/09">September</a> (9)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/10">October</a> (7)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/11">November</a> (4)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2007/12">December</a> (1)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2006/">2006</a> <small>(83)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/01">January</a> (14)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/02">February</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/03">March</a> (9)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/04">April</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/05">May</a> (5)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/06">June</a> (5)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/07">July</a> (5)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/08">August</a> (4)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/09">September</a> (7)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/10">October</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/11">November</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2006/12">December</a> (2)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2005/">2005</a> <small>(156)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/01">January</a> (17)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/02">February</a> (9)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/03">March</a> (24)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/04">April</a> (4)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/05">May</a> (14)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/06">June</a> (16)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/07">July</a> (16)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/08">August</a> (11)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/09">September</a> (11)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/10">October</a> (14)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/11">November</a> (7)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2005/12">December</a> (13)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2004/">2004</a> <small>(214)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/01">January</a> (12)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/02">February</a> (16)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/03">March</a> (21)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/04">April</a> (16)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/05">May</a> (23)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/06">June</a> (17)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/07">July</a> (25)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/08">August</a> (15)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/09">September</a> (24)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/10">October</a> (14)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/11">November</a> (19)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2004/12">December</a> (12)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2003/">2003</a> <small>(157)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/01">January</a> (20)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/02">February</a> (11)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/03">March</a> (11)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/04">April</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/05">May</a> (16)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/06">June</a> (13)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/07">July</a> (18)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/08">August</a> (15)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/09">September</a> (11)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/10">October</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/11">November</a> (11)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2003/12">December</a> (15)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2002/">2002</a> <small>(89)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/01">January</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/02">February</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/03">March</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/04">April</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/05">May</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/06">June</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/07">July</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/08">August</a> (5)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/09">September</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/10">October</a> (14)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/11">November</a> (8)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2002/12">December</a> (10)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2001/">2001</a> <small>(44)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/01">January</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/02">February</a> (4)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/03">March</a> (5)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/04">April</a> (4)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/05">May</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/07">July</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/08">August</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/09">September</a> (12)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/10">October</a> (5)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2001/12">December</a> (3)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/2000/">2000</a> <small>(30)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/01">January</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/02">February</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/03">March</a> (6)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/04">April</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/05">May</a> (5)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/07">July</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/08">August</a> (2)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/09">September</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/10">October</a> (1)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/11">November</a> (3)</li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/2000/12">December</a> (4)</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong><a href="http://meyerweb.com/eric/thoughts/1999/">1999</a> <small>(2)</small></strong>
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/1999/12">December</a> (2)</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="panel" id="tfe-search">
+      <h4>Search Eric's Archived Thoughts</h4>
+
+      <form action="http://meyerweb.com/eric/thoughts/2013/03/" id="searchform" method="get" name="searchform">
+        <div>
+          <input name="s" size="15" type="text" value=""> <input name="submit" type="submit" value="search">
+        </div>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h4>Feeds</h4>
+
+      <ul>
+        <li>Posts:
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/feed/" title="Syndicate this site using RSS"><acronym title="Really Simple Syndication">RSS</acronym> 2.0</a></li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/feed/rss/" title="Syndicate this site using RSS"><acronym title="Really Simple Syndication">RSS</acronym> 0.92</a></li>
+
+            <li><a href="http://meyerweb.com/eric/thoughts/feed/atom/" title="Syndicate this site using Atom">Atom</a></li>
+          </ul>
+        </li>
+
+        <li>Comments:
+
+          <ul>
+            <li><a href="http://meyerweb.com/eric/thoughts/comments/feed/" title="The latest comments to all posts in RSS"><acronym title="Really Simple Syndication">RSS</acronym> 2.0</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="panel" id="extras">
+      <h4>Extras</h4>
+
+      <ul>
+        <li><a href="http://meyerweb.com/feeds/">Feeds</a> &acirc;&euro;&cent;</li>
+
+        <li><a href="http://meyerweb.com/eric/faq.html">FAQ</a> &acirc;&euro;&cent;</li>
+
+        <li><a href="http://meyerweb.com/family.html">Family</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="navigate">
+    <h4>Navigation</h4>
+
+    <ul id="navlinks">
+      <li id="archLink"><a href="http://meyerweb.com/eric/thoughts/">Archives</a></li>
+
+      <li id="cssLink"><a href="http://meyerweb.com/eric/css/">CSS</a></li>
+
+      <li id="toolsLink"><a href="http://meyerweb.com/eric/tools/">Toolbox</a></li>
+
+      <li id="writeLink"><a href="http://meyerweb.com/eric/writing.html">Writing</a></li>
+
+      <li id="speakLink"><a href="http://meyerweb.com/eric/talks/">Speaking</a></li>
+
+      <li id="otherLink"><a href="http://meyerweb.com/other/">Leftovers</a></li>
+
+      <li id="aboutsite"><a href="http://meyerweb.com/ui/about.html">About this site</a></li>
+    </ul>
+  </div>
+
+  <div id="footer">
+    <p class="sosumi">All contents of this site, unless otherwise noted, are &Acirc;&copy;1995-2013 <strong>Eric A. and Kathryn S. Meyer</strong>. All Rights Reserved.</p>
+
+    <p>"<a href="http://meyerweb.com/eric/thoughts/">Thoughts From Eric</a>" is powered by <a href="http://wordpress.org/">WordPress</a>.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+#thoughts ul.meta {
+  color: #778;
+  float: left;
+  line-height: 1.2;
+  list-style: none outside none;
+  margin: 0;
+  padding: .2em 0;
+  text-align: left;
+  width: auto;
+}
+#thoughts ul.meta li {
+  color: #778;
+  font-size: .85em;
+  line-height: 1.2;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+#thoughts ul.meta .cat {
+  -moz-border-top-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-bottom-colors: none;
+  border-color: silver;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px 0;
+  line-height: 1.5;
+  margin: .75em 0;
+  padding: .75em 0;
+}
+#thoughts ul.meta .cmt { line-height: 1.5; }
+#thoughts .meta a {
+  border-bottom: 1px solid #BBC;
+  color: #557;
+  text-decoration: none;
+  text-transform: none;
+}
+#thoughts .text {
+  clear: none;
+  margin-bottom: 2.5em;
+  margin-left: 10em;
+  padding-left: 2px;
+}
+#thoughts p { line-height: 1.4em; margin: .33em 0 .75em; }
+#thoughts pre { border-left: .5em double #EEE; margin-left: .5em; padding-left: 1em; }
+#thoughts blockquote { border-left: 1em solid #e0d8d8; margin-left: 0; padding-left: 1em; }
+.navigation { border-top: 1px solid silver; margin: 1em 0 1em 10em; }
+.navigation div { background: none repeat scroll 0 0 #FFF; margin-top: -1em; padding: .2em 0; }
+.navigation .prev { border-right: 1px solid silver; float: left; }
+.navigation .next { border-left: 1px solid silver; float: right; }
+input[type=submit] { background: url(undefined) repeat-x scroll 0 0 #fafafa!important; color: #000!important; font-size: 13px!important; }
+button { background: url(undefined) repeat-x scroll 0 0 #fafafa!important; color: #000!important; font-size: 13px!important; }
+input[type=submit]:hover { background: url(undefined) repeat-x scroll 0 0 #a0e3fd!important; border: 1px solid #3781b0!important; }
+button:hover { background: url(undefined) repeat-x scroll 0 0 #a0e3fd!important; border: 1px solid #3781b0!important; }
+#extra #monthly strong { display: block; font-size: 1.25em; margin: .33em 0 .1em; }
+#extra #monthly li { margin-left: 0; text-indent: 0; }
+#extra #monthly > ul > li > ul { border-left: 1.5em solid silver; margin: 0; padding: 0 0 0 .5em; }
